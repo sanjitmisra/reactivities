@@ -35,11 +35,13 @@ namespace API
             });
         
             services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
             services.AddCors(options => 
                 options.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
                 }));
+            
             services.AddMediatR(typeof(List.Handler).Assembly);
         }
 

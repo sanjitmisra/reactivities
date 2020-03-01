@@ -16,6 +16,8 @@ namespace Application.Activities
 
         }
 
+        //public class NotificationHandler : INotificationHandler
+
         public class Handler : IRequestHandler<Query, List<Activity>>
         {
             private readonly DataContext _dataContext;
